@@ -2,8 +2,8 @@ import secrets
 import string
 import pyperclip
 
-def generate_bearer_token(length=32):
-    token_chars = string.ascii_letters + string.digits + '-._~+/='
+def generate_bearer_token(length=24):
+    token_chars = string.ascii_letters + string.digits + '-_~+/='
     random_string = ''.join(secrets.choice(token_chars) for _ in range(length))
     return "Bearer " + random_string
 
