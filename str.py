@@ -57,7 +57,7 @@ def main(args):
     """Entry function for program"""
     if len(args) < 3:
         print_help()
-        sys.exit(1)
+        sys.exit(0)
 
     string = args[-2]
     flag = args[-1]
