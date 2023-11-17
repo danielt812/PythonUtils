@@ -46,10 +46,12 @@ def operation(flag, string):
         return to_title_case(string)
     if flag in ["-c", "--capital-case"]:
         return to_capital_case(string)
+    if flag in ["-h", "--help"]:
+        print_help()
+        sys.exit(1)
 
     print(colored("\nInvalid flag option.\n", "red"))
 
-    print_help()
     sys.exit(1)
 
 
