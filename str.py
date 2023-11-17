@@ -36,7 +36,7 @@ def print_help():
     print(colored("  -c, --capital-case", "white"))
 
 
-def operation(string, flag):
+def operation(flag, string):
     """Determine what operation is being used based on flag provided"""
     if flag in ["-l", "--lower-case"]:
         return to_lower_case(string)
@@ -59,9 +59,9 @@ def main(args):
         print_help()
         sys.exit(0)
 
-    string = args[-2]
-    flag = args[-1]
-    result = operation(string, flag)
+    string = args[-1]
+    flag = args[-2]
+    result = operation(flag, string)
     print(f"{colored(result, 'yellow')} copied to the clipboard.")
     pyperclip.copy(result)
 
